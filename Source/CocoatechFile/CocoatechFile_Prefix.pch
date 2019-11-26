@@ -6,7 +6,6 @@
 
 #ifdef __OBJC__
 #import <Cocoa/Cocoa.h>
-#import <QTKit/QTKit.h>
 #import <DiscRecordingUI/DiscRecordingUI.h>
 #import <DiskArbitration/DiskArbitration.h>
 
