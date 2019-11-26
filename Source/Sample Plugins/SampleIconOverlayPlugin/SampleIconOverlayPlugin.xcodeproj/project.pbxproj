@@ -1,0 +1,309 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		20208A370BF91742009FECC1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 20208A240BF91741009FECC1 /* InfoPlist.strings */; };
+		203254FE10C39622009C9EB9 /* NTSampleIconOverlayPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 203254FB10C39622009C9EB9 /* NTSampleIconOverlayPlugin.h */; };
+		203254FF10C39622009C9EB9 /* NTSampleIconOverlayPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 203254FC10C39622009C9EB9 /* NTSampleIconOverlayPlugin.m */; };
+		2032550010C39622009C9EB9 /* SampleIconOverlayPlugin_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 203254FD10C39622009C9EB9 /* SampleIconOverlayPlugin_Prefix.pch */; };
+		20CA32130B6089500060C9C3 /* NTIconOverlayPluginProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 20CA32120B6089500060C9C3 /* NTIconOverlayPluginProtocol.h */; };
+		20CD1E810546699A00A37B05 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		089C1672FE841209C02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		089C167FFE841241C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		20208A280BF91742009FECC1 /* en */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		203254FB10C39622009C9EB9 /* NTSampleIconOverlayPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTSampleIconOverlayPlugin.h; sourceTree = "<group>"; };
+		203254FC10C39622009C9EB9 /* NTSampleIconOverlayPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTSampleIconOverlayPlugin.m; sourceTree = "<group>"; };
+		203254FD10C39622009C9EB9 /* SampleIconOverlayPlugin_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleIconOverlayPlugin_Prefix.pch; sourceTree = "<group>"; };
+		20BBA3B40E4FC3E500D09852 /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Debug.xcconfig; path = ../../Configurations/Debug.xcconfig; sourceTree = SOURCE_ROOT; };
+		20BBA3B50E4FC3E500D09852 /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Release.xcconfig; path = ../../Configurations/Release.xcconfig; sourceTree = SOURCE_ROOT; };
+		20CA32120B6089500060C9C3 /* NTIconOverlayPluginProtocol.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = NTIconOverlayPluginProtocol.h; path = ../../CocoatechProtocols/NTIconOverlayPluginProtocol.h; sourceTree = SOURCE_ROOT; };
+		20CD1E840546699A00A37B05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		20CD1E850546699A00A37B05 /* SampleIconOverlayPlugin.plugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SampleIconOverlayPlugin.plugin; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		20CD1E800546699A00A37B05 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20CD1E810546699A00A37B05 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		089C166AFE841209C02AAC07 /* Image Converter */ = {
+			isa = PBXGroup;
+			children = (
+				20BBA3B40E4FC3E500D09852 /* Debug.xcconfig */,
+				20BBA3B50E4FC3E500D09852 /* Release.xcconfig */,
+				08FB77AFFE84173DC02AAC07 /* Source */,
+				20B382F60416B27F00000103 /* Headers */,
+				089C167CFE841241C02AAC07 /* Resources */,
+				089C1671FE841209C02AAC07 /* Frameworks and Libraries */,
+				19C28FB8FE9D52D311CA2CBB /* Products */,
+				20CD1E840546699A00A37B05 /* Info.plist */,
+			);
+			name = "Image Converter";
+			sourceTree = "<group>";
+		};
+		089C1671FE841209C02AAC07 /* Frameworks and Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */,
+				1058C7AEFEA557BF11CA2CBB /* Other Frameworks */,
+			);
+			name = "Frameworks and Libraries";
+			sourceTree = "<group>";
+		};
+		089C167CFE841241C02AAC07 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				20208A240BF91741009FECC1 /* InfoPlist.strings */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		08FB77AFFE84173DC02AAC07 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				20CA32120B6089500060C9C3 /* NTIconOverlayPluginProtocol.h */,
+				203254FC10C39622009C9EB9 /* NTSampleIconOverlayPlugin.m */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7AEFEA557BF11CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				089C1672FE841209C02AAC07 /* Foundation.framework */,
+				089C167FFE841241C02AAC07 /* AppKit.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FB8FE9D52D311CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				20CD1E850546699A00A37B05 /* SampleIconOverlayPlugin.plugin */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		20B382F60416B27F00000103 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				203254FD10C39622009C9EB9 /* SampleIconOverlayPlugin_Prefix.pch */,
+				203254FB10C39622009C9EB9 /* NTSampleIconOverlayPlugin.h */,
+			);
+			name = Headers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		20CD1E720546699A00A37B05 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20CA32130B6089500060C9C3 /* NTIconOverlayPluginProtocol.h in Headers */,
+				203254FE10C39622009C9EB9 /* NTSampleIconOverlayPlugin.h in Headers */,
+				2032550010C39622009C9EB9 /* SampleIconOverlayPlugin_Prefix.pch in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		20CD1E710546699A00A37B05 /* SampleIconOverlayPlugin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA506E0508556E54000B659F /* Build configuration list for PBXNativeTarget "SampleIconOverlayPlugin" */;
+			buildPhases = (
+				20CD1E720546699A00A37B05 /* Headers */,
+				20CD1E780546699A00A37B05 /* Resources */,
+				20CD1E7C0546699A00A37B05 /* Sources */,
+				20CD1E800546699A00A37B05 /* Frameworks */,
+				20CD1E820546699A00A37B05 /* Rez */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SampleIconOverlayPlugin;
+			productName = "Image Converter";
+			productReference = 20CD1E850546699A00A37B05 /* SampleIconOverlayPlugin.plugin */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		089C1669FE841209C02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = AA506E0908556E54000B659F /* Build configuration list for PBXProject "SampleIconOverlayPlugin" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+				cz,
+				da,
+				Dutch,
+				Finnish,
+				Italian,
+				no,
+				Spanish,
+				Swedish,
+				cs,
+				zh_TW,
+				en,
+				de,
+				es,
+				fi,
+				fr,
+				it,
+				ja,
+				ko,
+				nb,
+				nl,
+				pl,
+				pt,
+				ru,
+				sv,
+				zh_CN,
+			);
+			mainGroup = 089C166AFE841209C02AAC07 /* Image Converter */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				20CD1E710546699A00A37B05 /* SampleIconOverlayPlugin */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		20CD1E780546699A00A37B05 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20208A370BF91742009FECC1 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXRezBuildPhase section */
+		20CD1E820546699A00A37B05 /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXRezBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		20CD1E7C0546699A00A37B05 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				203254FF10C39622009C9EB9 /* NTSampleIconOverlayPlugin.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		20208A240BF91741009FECC1 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				20208A280BF91742009FECC1 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AA506E0608556E54000B659F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = SampleIconOverlayPlugin_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				PRODUCT_NAME = SampleIconOverlayPlugin;
+				WRAPPER_EXTENSION = plugin;
+			};
+			name = Debug;
+		};
+		AA506E0708556E54000B659F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = SampleIconOverlayPlugin_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				PRODUCT_NAME = SampleIconOverlayPlugin;
+				WRAPPER_EXTENSION = plugin;
+			};
+			name = Release;
+		};
+		AA506E0A08556E54000B659F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 20BBA3B40E4FC3E500D09852 /* Debug.xcconfig */;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = ../../CocoatechProtocols/;
+			};
+			name = Debug;
+		};
+		AA506E0B08556E54000B659F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 20BBA3B50E4FC3E500D09852 /* Release.xcconfig */;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = ../../CocoatechProtocols/;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AA506E0508556E54000B659F /* Build configuration list for PBXNativeTarget "SampleIconOverlayPlugin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA506E0608556E54000B659F /* Debug */,
+				AA506E0708556E54000B659F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		AA506E0908556E54000B659F /* Build configuration list for PBXProject "SampleIconOverlayPlugin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA506E0A08556E54000B659F /* Debug */,
+				AA506E0B08556E54000B659F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 089C1669FE841209C02AAC07 /* Project object */;
+}
