@@ -144,42 +144,49 @@ FSClearInvisible(
 	return ( FSChangeFinderFlags(ref, false, kIsInvisible) );
 }
 
+// link:http://doc.daleglass.net/MoreFilesX_8c.html
+// link:http://doc.daleglass.net/MoreFilesX_8c-source.html
+/*****************************************************************************/
 OSErr
 FSChangeFinderFlags(
-					const FSRef *ref,
-					Boolean setBits,
-					UInt16 flagBits)
+        const FSRef *ref,
+        Boolean setBits,
+        UInt16 flagBits)
 {
-	OSErr			result;
-	FSCatalogInfo	catalogInfo;
-	FSRef			parentRef;
-	
-	/* get the current finderInfo */
-	result = FSGetCatalogInfo(ref, kFSCatInfoFinderInfo, &catalogInfo, NULL, NULL, &parentRef);
-	require_noerr(result, FSGetCatalogInfo);
-	
-	/* set or clear the appropriate bits in the finderInfo.finderFlags */
-	if ( setBits )
-	{
-		/* OR in the bits */
-		((FileInfo *)&catalogInfo.finderInfo)->finderFlags |= flagBits;
-	}
-	else
-	{
-		/* AND out the bits */
-		((FileInfo *)&catalogInfo.finderInfo)->finderFlags &= ~flagBits;
-	}
-	
-	/* save the modified finderInfo */
-	result = FSSetCatalogInfo(ref, kFSCatInfoFinderInfo, &catalogInfo);
-	require_noerr(result, FSSetCatalogInfo);
-	
+        OSErr                   result;
+        FSCatalogInfo   catalogInfo;
+        FSRef                   parentRef;
+
+        /* get the current finderInfo */
+        result = FSGetCatalogInfo(ref, kFSCatInfoFinderInfo, &catalogInfo, NULL, NULL, &parentRef);
+        __Require_noErr(result, FSGetCatalogInfo);
+
+        /* set or clear the appropriate bits in the finderInfo.finderFlags */
+        if ( setBits )
+        {
+                /* OR in the bits */
+                ((FileInfo *)&catalogInfo.finderInfo)->finderFlags |= flagBits;
+        }
+        else
+        {
+                /* AND out the bits */
+                ((FileInfo *)&catalogInfo.finderInfo)->finderFlags &= ~flagBits;
+        }
+
+        /* save the modified finderInfo */
+        result = FSSetCatalogInfo(ref, kFSCatInfoFinderInfo, &catalogInfo);
+        __Require_noErr(result, FSSetCatalogInfo);
+
+        /* and attempt to bump the parent directory's mod date to wake up the Finder */
+        /* to the change we just made (ignore errors from this) */
+        //__Verify_noErr(FSBumpDate(&parentRef));
+
 FSSetCatalogInfo:
 FSGetCatalogInfo:
-		
-		return ( result );
-}
 
+        return ( result );
+}
+/*****************************************************************************/
 OSStatus FSMakeFSRef(FSVolumeRefNum volRefNum,
 			SInt32 dirID,
 			NSString* fileName,
@@ -193,7 +200,7 @@ OSStatus FSMakeFSRef(FSVolumeRefNum volRefNum,
 		// convert any colons to /
 		fileName = [fileName colonToSlash];
 		
-		int length = [fileName length];
+		NSUInteger length = [fileName length];
 		unichar* buffer;
 		FSRef fileRef;
 		

@@ -52,7 +52,6 @@
 #import <CocoatechFile/NTSizeCalculator.h>
 #import <CocoatechFile/NTFileListMonitor.h>
 #import <CocoatechFile/NTFileAttributeModifier.h>
-#import <CocoatechFile/NTLaunchServiceHacks.h>
 #import <CocoatechFile/NTLaunchServices.h>
 #import <CocoatechFile/NTQuickLookThumbnail.h>
 #import <CocoatechFile/NTOperation.h>

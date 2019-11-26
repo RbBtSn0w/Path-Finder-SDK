@@ -21,8 +21,5 @@
 + (BOOL)setCreationDate:(NSDate*)date desc:(NTFileDesc*)desc;
 + (BOOL)setAttributeModificationDate:(NSDate*)date desc:(NTFileDesc*)desc;
 
-// application bindings
-+ (BOOL)setApplicationBinding:(NTFileDesc*)application forFile:(NTFileDesc*)desc;
-+ (BOOL)setApplicationBinding:(NTFileDesc*)application forFilesLike:(NTFileDesc*)desc;
 
 @end

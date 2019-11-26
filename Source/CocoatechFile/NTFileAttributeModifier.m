@@ -7,7 +7,6 @@
 //
 
 #import "NTFileAttributeModifier.h"
-#import "NTLaunchServiceHacks.h"
 #include <sys/stat.h>
 
 @implementation NTFileAttributeModifier
@@ -83,42 +82,6 @@
     catalogInfo.createDate = [NSDate UTCDateTimeFromNSDate:date];
 
     return (FSSetCatalogInfo([desc FSRefPtr], kFSCatInfoCreateDate, &catalogInfo) == noErr);
-}
-
-+ (BOOL)setApplicationBinding:(NTFileDesc*)application forFile:(NTFileDesc*)desc;
-{
-    OSStatus err;
-
-    err = [NTLaunchServiceHacks LSSetStrongBindingForRef:[desc FSRefPtr]
-                                             application:[application FSRefPtr]];
-
-#warning $$$$ temporary hack until I fix kqueues 
-	[NTFileAttributeModifier touch:desc]; 
-
-    return (err == noErr);
-}
-
-+ (BOOL)setApplicationBinding:(NTFileDesc*)application forFilesLike:(NTFileDesc*)desc;
-{
-    OSStatus err;
-    OSType type = [desc type];
-    OSType creator = [desc creator];
-    NSString *extension = [desc extension];
-    
-    // not sure if this hack is correct, having problems, so only use type and creator if no extension
-    if ([extension length] == 0)
-    {
-        type = kLSUnknownType;
-        creator = kLSUnknownCreator;
-    }
-    
-    err = [NTLaunchServiceHacks LSSetWeakBindingForType:type
-                                                creator:creator
-                                              extension:extension
-                                                   role:kLSRolesAll
-                                            application:[application FSRefPtr]];
-
-    return (err == noErr);
 }
 
 @end
