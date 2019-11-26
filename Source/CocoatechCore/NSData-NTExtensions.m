@@ -18,8 +18,8 @@
 	if ([self length] == 0) 
 		return self;
 	
-	unsigned full_length = [self length];
-	unsigned half_length = [self length] / 2;
+	NSUInteger full_length = [self length];
+	NSUInteger half_length = [self length] / 2;
 	
 	NSMutableData *decompressed = [NSMutableData dataWithLength: full_length + half_length];
 	BOOL done = NO;
@@ -27,7 +27,7 @@
 	
 	z_stream strm;
 	strm.next_in = (Bytef *)[self bytes];
-	strm.avail_in = [self length];
+	strm.avail_in = (unsigned int)[self length];
 	strm.total_out = 0;
 	strm.zalloc = Z_NULL;
 	strm.zfree = Z_NULL;
@@ -42,7 +42,7 @@
 			[decompressed increaseLengthBy: half_length];
 		
 		strm.next_out = [decompressed mutableBytes] + strm.total_out;
-		strm.avail_out = [decompressed length] - strm.total_out;
+		strm.avail_out = (unsigned int)([decompressed length] - strm.total_out);
 		
 		// Inflate another chunk.
 		status = inflate (&strm, Z_SYNC_FLUSH);
@@ -126,7 +126,7 @@ static unsigned sEncryptionKeyLength = 4;
 	unsigned char* keyPtr=(unsigned char*)&sEncryptionKey;
 	unsigned keyIndex=0;
 	
-	unsigned i, cnt = [mutableData length];
+	NSUInteger i, cnt = [mutableData length];
 	for (i=0;i<cnt;i++)
 	{
 		ptr[i] ^= keyPtr[keyIndex++]; // xor the bytes
@@ -180,7 +180,7 @@ XX,XX,XX,XX, XX,XX,XX,XX, XX,XX,XX,XX, XX,XX,XX,XX,
 {
     NSData *base64Data;
     const char *bytes;
-    unsigned int length;
+    NSUInteger length;
     NTDataBuffer dataBuffer, *buffer;
     NSData *decodedData;
     NSData *returnValue;
@@ -272,7 +272,7 @@ static inline void output64chunk(int c1, int c2, int c3, int pads, NTDataBuffer 
     NSString *string;
     NSData *data;
     const unsigned char *bytes;
-    unsigned int length;
+    NSUInteger length;
     NTDataBuffer dataBuffer, *buffer;
     unsigned int c1, c2, c3;
 	

@@ -107,8 +107,8 @@
 			break;
 	}
 	
-	if([[_normalImage name] isEqualToString: @"NSSwitch"] ||
-	   [[_normalImage name] isEqualToString: @"NSRadioButton"]) {
+	if([[self.image name] isEqualToString: @"NSSwitch"] ||
+	   [[self.image name] isEqualToString: @"NSRadioButton"]) {
 		
 		if([self imagePosition] != NSNoImage) {
 			
@@ -122,8 +122,8 @@
 	NSRect textRect = frame;
 	
 	// Adjust Text Rect based on control type and size
-	if([[_normalImage name] isEqualToString: @"NSSwitch"] ||
-	   [[_normalImage name] isEqualToString: @"NSRadioButton"]) {
+	if([[self.image name] isEqualToString: @"NSSwitch"] ||
+	   [[self.image name] isEqualToString: @"NSRadioButton"]) {
 		
 		//We aren't going to do anything here
 	} else {
@@ -206,10 +206,10 @@
 		//Apple uses Images for the check and radio buttons, this is
 		//a very ugly hack to detect which one is being used so that
 		//I can draw the correct one.
-		if([[_normalImage name] isEqualToString: @"NSSwitch"]) {
+		if([[image name] isEqualToString: @"NSSwitch"]) {
 			
 			[self drawCheckInFrame: frame isRadio: NO];		
-		} else if([[_normalImage name] isEqualToString: @"NSRadioButton"]) {
+		} else if([[image name] isEqualToString: @"NSRadioButton"]) {
 			
 			[self drawCheckInFrame: frame isRadio: YES];
 		} else {
