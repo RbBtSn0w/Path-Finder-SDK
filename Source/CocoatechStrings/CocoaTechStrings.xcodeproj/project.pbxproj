@@ -457,8 +457,6 @@
 		20E976E105F1C665002909FE /* NTViewLocalizer.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = NTViewLocalizer.m; sourceTree = "<group>"; };
 		20E976E605F1C6CC002909FE /* NSButton-Extensions.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = "NSButton-Extensions.h"; sourceTree = "<group>"; };
 		20E976E705F1C6CC002909FE /* NSButton-Extensions.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = "NSButton-Extensions.m"; sourceTree = "<group>"; };
-		20F80D85092365DE00CE4EE9 /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xcconfig; name = Debug.xcconfig; path = ../Configurations/Debug.xcconfig; sourceTree = SOURCE_ROOT; };
-		20F80D86092365DE00CE4EE9 /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xcconfig; name = Release.xcconfig; path = ../Configurations/Release.xcconfig; sourceTree = SOURCE_ROOT; };
 		F9613FF003A6BF12014F6B84 /* NTLocalizedString.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = NTLocalizedString.h; sourceTree = "<group>"; };
 		F9613FF103A6BF12014F6B84 /* NTLocalizedString.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = NTLocalizedString.m; sourceTree = "<group>"; };
 		F9613FF903A6BF4D014F6B84 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
@@ -519,8 +517,6 @@
 		F9613FE103A6BEDB014F6B84 = {
 			isa = PBXGroup;
 			children = (
-				20F80D85092365DE00CE4EE9 /* Debug.xcconfig */,
-				20F80D86092365DE00CE4EE9 /* Release.xcconfig */,
 				202253CF0565C8F900066B11 /* CocoaTechStrings.h */,
 				20DAAA5F08FB10AD008777D7 /* CocoatechStrings.pch */,
 				F9613FF303A6BF1C014F6B84 /* Source */,
@@ -605,22 +601,17 @@
 /* Begin PBXProject section */
 		F9613FE503A6BEDB014F6B84 /* Project object */ = {
 			isa = PBXProject;
-			buildConfigurationList = AA31AF7608554EFC00EB35A6 /* Build configuration list for PBXProject "CocoatechStrings" */;
+			attributes = {
+				LastUpgradeCheck = 1120;
+			};
+			buildConfigurationList = AA31AF7608554EFC00EB35A6 /* Build configuration list for PBXProject "CocoaTechStrings" */;
 			compatibilityVersion = "Xcode 2.4";
+			developmentRegion = en;
 			hasScannedForEncodings = 1;
 			knownRegions = (
-				English,
-				Japanese,
-				French,
-				German,
 				cs,
 				da,
-				Dutch,
-				Finnish,
-				Italian,
 				no,
-				Spanish,
-				Swedish,
 				zh_TW,
 				sv,
 				de,
@@ -1243,6 +1234,7 @@
 		AA31AF7308554EFC00EB35A6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
@@ -1250,6 +1242,7 @@
 				GCC_PREFIX_HEADER = CocoatechStrings.pch;
 				INFOPLIST_FILE = "Info-CocoaTechStrings__Native_.plist";
 				INSTALL_PATH = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = CocoaTechStrings;
 				WRAPPER_EXTENSION = framework;
 			};
@@ -1258,6 +1251,7 @@
 		AA31AF7408554EFC00EB35A6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
@@ -1265,6 +1259,7 @@
 				GCC_PREFIX_HEADER = CocoatechStrings.pch;
 				INFOPLIST_FILE = "Info-CocoaTechStrings__Native_.plist";
 				INSTALL_PATH = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = CocoaTechStrings;
 				WRAPPER_EXTENSION = framework;
 			};
@@ -1272,15 +1267,64 @@
 		};
 		AA31AF7708554EFC00EB35A6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 20F80D85092365DE00CE4EE9 /* Debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
 		AA31AF7808554EFC00EB35A6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 20F80D86092365DE00CE4EE9 /* Release.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
@@ -1296,7 +1340,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		AA31AF7608554EFC00EB35A6 /* Build configuration list for PBXProject "CocoatechStrings" */ = {
+		AA31AF7608554EFC00EB35A6 /* Build configuration list for PBXProject "CocoaTechStrings" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AA31AF7708554EFC00EB35A6 /* Debug */,
