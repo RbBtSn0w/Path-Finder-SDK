@@ -930,20 +930,22 @@
 			
 			if ([ext isEqualToStringCaseInsensitive:@"gif"] || type == 'GIF ')
 			{
-				// open file with quicktime and see if there is more than one frame
-				NSError* error=nil;
- 				QTMovie *movie = [QTMovie movieWithURL:[_desc URL] error:&error];
-				
-				if (movie)
-				{
-					QTTime duration = [movie duration];
-					
-					// is this a gif image or an animated gif?  Gif images have 6/600, but not sure if I can rely on that
-					
-					NSTimeInterval timeInterval;
-					if (QTGetTimeInterval(duration, &timeInterval))
-						result = (timeInterval > .01);  // normal gif returns .01
-				}
+//				// open file with quicktime and see if there is more than one frame
+//				NSError* error=nil;
+// 				QTMovie *movie = [QTMovie movieWithURL:[_desc URL] error:&error];
+//
+//				if (movie)
+//				{
+//					QTTime duration = [movie duration];
+//
+//					// is this a gif image or an animated gif?  Gif images have 6/600, but not sure if I can rely on that
+//
+//					NSTimeInterval timeInterval;
+//					if (QTGetTimeInterval(duration, &timeInterval))
+//						result = (timeInterval > .01);  // normal gif returns .01
+//				}
+                //too much wait time
+                result = YES;
 			}
 		}
 	}
