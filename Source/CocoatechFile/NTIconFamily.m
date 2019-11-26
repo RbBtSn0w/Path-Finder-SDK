@@ -225,15 +225,15 @@
     float oneOverAlpha;
 
     // Get information about the bitmapImageRep.
-    int pixelsWide      = [bitmapImageRep pixelsWide];
-    int pixelsHigh      = [bitmapImageRep pixelsHigh];
-    int bitsPerSample   = [bitmapImageRep bitsPerSample];
-    int samplesPerPixel = [bitmapImageRep samplesPerPixel];
-    int bitsPerPixel    = [bitmapImageRep bitsPerPixel];
+    NSInteger pixelsWide      = [bitmapImageRep pixelsWide];
+    NSInteger pixelsHigh      = [bitmapImageRep pixelsHigh];
+    NSInteger bitsPerSample   = [bitmapImageRep bitsPerSample];
+    NSInteger samplesPerPixel = [bitmapImageRep samplesPerPixel];
+    NSInteger bitsPerPixel    = [bitmapImageRep bitsPerPixel];
     //    BOOL hasAlpha       = [bitmapImageRep hasAlpha];
     BOOL isPlanar       = [bitmapImageRep isPlanar];
     //    int numberOfPlanes  = [bitmapImageRep numberOfPlanes];
-    int bytesPerRow     = [bitmapImageRep bytesPerRow];
+    NSInteger bytesPerRow     = [bitmapImageRep bytesPerRow];
     //    int bytesPerPlane   = [bitmapImageRep bytesPerPlane];
     unsigned char* bitmapData = [bitmapImageRep bitmapData];
 
@@ -251,7 +251,7 @@
     }
     if (bitsPerSample != 8)
     {
-        NSLog(@"get32BitDataFromBitmapImageRep:requiredPixelSize: returning NULL due to bitsPerSample == %d", bitsPerSample);
+        NSLog(@"get32BitDataFromBitmapImageRep:requiredPixelSize: returning NULL due to bitsPerSample == %zd", bitsPerSample);
         return NULL;
     }
 
@@ -302,7 +302,7 @@
     }
     else
     {
-        NSLog(@"get32BitDataFromBitmapImageRep:requiredPixelSize: returning NULL due to samplesPerPixel == %d, bitsPerPixel == %d", samplesPerPixel, bitsPerPixel);
+        NSLog(@"get32BitDataFromBitmapImageRep:requiredPixelSize: returning NULL due to samplesPerPixel == %zd, bitsPerPixel == %zd", samplesPerPixel, bitsPerPixel);
         return NULL;
     }
 
@@ -319,13 +319,13 @@
     int x, y;
 
     // Get information about the bitmapImageRep.
-    int pixelsWide      = [bitmapImageRep pixelsWide];
-    int pixelsHigh      = [bitmapImageRep pixelsHigh];
-    int bitsPerSample   = [bitmapImageRep bitsPerSample];
-    int samplesPerPixel = [bitmapImageRep samplesPerPixel];
-    int bitsPerPixel    = [bitmapImageRep bitsPerPixel];
+    NSInteger pixelsWide      = [bitmapImageRep pixelsWide];
+    NSInteger pixelsHigh      = [bitmapImageRep pixelsHigh];
+    NSInteger bitsPerSample   = [bitmapImageRep bitsPerSample];
+    NSInteger samplesPerPixel = [bitmapImageRep samplesPerPixel];
+    NSInteger bitsPerPixel    = [bitmapImageRep bitsPerPixel];
     BOOL isPlanar       = [bitmapImageRep isPlanar];
-    int bytesPerRow     = [bitmapImageRep bytesPerRow];
+    NSInteger bytesPerRow     = [bitmapImageRep bytesPerRow];
     unsigned char* bitmapData = [bitmapImageRep bitmapData];
 
     // Make sure bitmap has the required dimensions.
@@ -341,12 +341,14 @@
     }
     if (bitsPerSample != 8)
     {
-        NSLog(@"get8BitDataFromBitmapImageRep:requiredPixelSize: returning NULL due to bitsPerSample == %d", bitsPerSample);
+        NSLog(@"get8BitDataFromBitmapImageRep:requiredPixelSize: returning NULL due to bitsPerSample == %zd", bitsPerSample);
         return NULL;
     }
 
     if (((samplesPerPixel == 3) && (bitsPerPixel == 24)) || ((samplesPerPixel == 4) && (bitsPerPixel == 32)))
     {
+        return NULL;
+        /*
         CGDirectPaletteRef cgPal;
         CGDeviceColor cgCol;
 
@@ -388,10 +390,11 @@
         }
 
         CGPaletteRelease(cgPal);
+        */
     }
     else
     {
-        NSLog(@"get8BitDataFromBitmapImageRep:requiredPixelSize: returning NULL due to samplesPerPixel == %d, bitsPerPixel == %d", samplesPerPixel, bitsPerPixel);
+        NSLog(@"get8BitDataFromBitmapImageRep:requiredPixelSize: returning NULL due to samplesPerPixel == %zd, bitsPerPixel == %zd", samplesPerPixel, bitsPerPixel);
         return NULL;
     }
 
@@ -408,15 +411,15 @@
     int x, y;
 
     // Get information about the bitmapImageRep.
-    int pixelsWide      = [bitmapImageRep pixelsWide];
-    int pixelsHigh      = [bitmapImageRep pixelsHigh];
-    int bitsPerSample   = [bitmapImageRep bitsPerSample];
-    int samplesPerPixel = [bitmapImageRep samplesPerPixel];
-    int bitsPerPixel    = [bitmapImageRep bitsPerPixel];
+    NSInteger pixelsWide      = [bitmapImageRep pixelsWide];
+    NSInteger pixelsHigh      = [bitmapImageRep pixelsHigh];
+    NSInteger bitsPerSample   = [bitmapImageRep bitsPerSample];
+    NSInteger samplesPerPixel = [bitmapImageRep samplesPerPixel];
+    NSInteger bitsPerPixel    = [bitmapImageRep bitsPerPixel];
     //    BOOL hasAlpha       = [bitmapImageRep hasAlpha];
     BOOL isPlanar       = [bitmapImageRep isPlanar];
     //    int numberOfPlanes  = [bitmapImageRep numberOfPlanes];
-    int bytesPerRow     = [bitmapImageRep bytesPerRow];
+    NSInteger bytesPerRow     = [bitmapImageRep bytesPerRow];
     //    int bytesPerPlane   = [bitmapImageRep bytesPerPlane];
     unsigned char* bitmapData = [bitmapImageRep bitmapData];
 
@@ -433,7 +436,7 @@
     }
     if (bitsPerSample != 8)
     {
-        NSLog(@"get8BitMaskFromBitmapImageRep:requiredPixelSize: returning NULL due to bitsPerSample == %d", bitsPerSample);
+        NSLog(@"get8BitMaskFromBitmapImageRep:requiredPixelSize: returning NULL due to bitsPerSample == %zd", bitsPerSample);
         return NULL;
     }
 
@@ -470,7 +473,7 @@
     }
     else
     {
-        NSLog(@"get8BitMaskFromBitmapImageRep:requiredPixelSize: returning NULL due to samplesPerPixel == %d, bitsPerPixel == %d", samplesPerPixel, bitsPerPixel);
+        NSLog(@"get8BitMaskFromBitmapImageRep:requiredPixelSize: returning NULL due to samplesPerPixel == %zd, bitsPerPixel == %zd", samplesPerPixel, bitsPerPixel);
         return NULL;
     }
 
@@ -489,15 +492,15 @@
     unsigned char maskByte;
 
     // Get information about the bitmapImageRep.
-    int pixelsWide      = [bitmapImageRep pixelsWide];
-    int pixelsHigh      = [bitmapImageRep pixelsHigh];
-    int bitsPerSample   = [bitmapImageRep bitsPerSample];
-    int samplesPerPixel = [bitmapImageRep samplesPerPixel];
-    int bitsPerPixel    = [bitmapImageRep bitsPerPixel];
+    NSInteger pixelsWide      = [bitmapImageRep pixelsWide];
+    NSInteger pixelsHigh      = [bitmapImageRep pixelsHigh];
+    NSInteger bitsPerSample   = [bitmapImageRep bitsPerSample];
+    NSInteger samplesPerPixel = [bitmapImageRep samplesPerPixel];
+    NSInteger bitsPerPixel    = [bitmapImageRep bitsPerPixel];
     //    BOOL hasAlpha       = [bitmapImageRep hasAlpha];
     BOOL isPlanar       = [bitmapImageRep isPlanar];
     //    int numberOfPlanes  = [bitmapImageRep numberOfPlanes];
-    int bytesPerRow     = [bitmapImageRep bytesPerRow];
+    NSInteger bytesPerRow     = [bitmapImageRep bytesPerRow];
     //    int bytesPerPlane   = [bitmapImageRep bytesPerPlane];
     unsigned char* bitmapData = [bitmapImageRep bitmapData];
 
@@ -574,7 +577,7 @@
     }
     else
     {
-        NSLog(@"get1BitMaskFromBitmapImageRep:requiredPixelSize: returning NULL due to bitsPerPixel == %d, samplesPerPixel== %d, bitsPerSample == %d", bitsPerPixel, samplesPerPixel, bitsPerSample);
+        NSLog(@"get1BitMaskFromBitmapImageRep:requiredPixelSize: returning NULL due to bitsPerPixel == %zd, samplesPerPixel== %zd, bitsPerSample == %zd", bitsPerPixel, samplesPerPixel, bitsPerSample);
         return NULL;
     }
 
@@ -752,7 +755,7 @@
 	
     if (result != noErr)
     {
-        NSLog(@"SetIconFamilyData() returned error %d", result);
+        NSLog(@"SetIconFamilyData() returned error %zd", result);
         return NO;
     }
 	
