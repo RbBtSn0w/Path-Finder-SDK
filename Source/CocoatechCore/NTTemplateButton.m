@@ -34,7 +34,7 @@
 @implementation NTTemplateButton
 
 @synthesize mouseOver;
-@synthesize menu, mouseDownNotification, trackingArea;
+@synthesize mouseDownNotification, trackingArea;
 
 + (Class)cellClass;
 {
@@ -95,7 +95,6 @@
 	[self removeTrackingArea:self.trackingArea];
 	self.trackingArea = nil;
 	
-	self.menu = nil;
 	self.mouseDownNotification = nil;
 	
 	[super dealloc];

@@ -35,7 +35,7 @@
 
 @implementation NTImageButton
 
-@synthesize menu, clickedImage, normalImage, dimmedImage;
+@synthesize clickedImage, normalImage, dimmedImage;
 @synthesize mouseOver;
 @synthesize trackingArea;
 
